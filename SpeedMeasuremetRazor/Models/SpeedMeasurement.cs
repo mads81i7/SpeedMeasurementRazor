@@ -7,6 +7,9 @@ namespace SpeedMeasuremetRazor.Models
 {
     public class SpeedMeasurement
     {
-       
+       public int Id { get; set; }
+       public DateTime TimeStamp { get; set; }
+       public int Speed { get; set; }
+       public Location Location { get; set; }
     }
 }
