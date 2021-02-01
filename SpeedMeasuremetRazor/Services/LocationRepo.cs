@@ -26,6 +26,7 @@ namespace SpeedMeasuremetRazor.Services
 
         public void AddLocation(Location location)
         {
+
             LocationList.Add(location);
         }
 

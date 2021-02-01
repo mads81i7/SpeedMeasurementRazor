@@ -8,6 +8,7 @@ namespace SpeedMeasuremetRazor.Models
 {
     public class Location
     {
+        public static int staticInt { get; set; }
         public int Id { get; set; }
         public string Address { get; set; }
         public int SpeedLimit { get; set; }

@@ -1,4 +1,25 @@
 ﻿@page
 @model SpeedMeasuremetRazor.Pages.Locations.CreateLocationModel
 @{
+    ViewData["Title"] = "Create location";
 }
+
+<h1>Create Location</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Location.Address"></label>
+        <input asp-for="@Model.Location.Address" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Location.Zone"></label>
+        <input asp-for="@Model.Location.Zone" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Location.SpeedLimit"></label>
+        <input asp-for="@Model.Location.SpeedLimit" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="button"/>
+    </div>
+</form>
