@@ -11,5 +11,6 @@ namespace SpeedMeasuremetRazor.Models
        public DateTime TimeStamp { get; set; }
        public int Speed { get; set; }
        public Location Location { get; set; }
+       public string Image { get; set; }
     }
 }
