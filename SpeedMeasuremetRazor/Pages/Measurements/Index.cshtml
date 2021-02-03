@@ -1,0 +1,70 @@
+﻿@page
+@model SpeedMeasuremetRazor.Pages.Measurements.IndexModel
+@{
+}
+<h1>List of speed measurements</h1>
+
+<p>Number of measurements: @Model.SpeedMeasurementRepo.GetAllSpeedMeasurements().Count</p>
+<a asp-page="/Measurements/CreateSpeedMeasurement">
+    Create New
+</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Speed
+            </th>
+            <th>
+                Time stamp
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Zone
+            </th>
+            <th>
+                Speed limit
+            </th>
+            <th>
+                Photo
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var speedMeasurement in Model.SpeedMeasurementRepo.GetAllSpeedMeasurements())
+        {
+        <tr>
+            <td>
+                @speedMeasurement.Id
+            </td>
+            <td>
+                @speedMeasurement.Speed
+            </td>
+            <td>
+                @speedMeasurement.TimeStamp
+            </td>
+            <td>
+                @speedMeasurement.Location.Address
+            </td>
+            <td>
+                @speedMeasurement.Location.Zone
+            </td>
+            <td>
+                @speedMeasurement.Location.SpeedLimit
+            </td>
+            <td>
+                <img src="~/Images/@speedMeasurement.Image" />
+            </td>
+            <td>
+                <form method="post">
+                    <button asp-route-Id="@speedMeasurement.Id">Delete</button>
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

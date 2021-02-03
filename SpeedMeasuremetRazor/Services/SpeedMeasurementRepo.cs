@@ -16,6 +16,7 @@ namespace SpeedMeasuremetRazor.Services
         {
             speedMeasurementsList = MockData.Measurements;
         }
+
         public List<SpeedMeasurement> GetAllSpeedMeasurements()
         {
             return speedMeasurementsList;
@@ -66,7 +67,14 @@ namespace SpeedMeasuremetRazor.Services
 
         public int NoOfCutInLicense()
         {
-            throw new NotImplementedException();
+            int i = 0;
+            foreach (SpeedMeasurement speedMeasurement in speedMeasurementsList)
+            {
+                if (speedMeasurement.Speed > 1.3 * speedMeasurement.Location.SpeedLimit)
+                    i++;
+            }
+
+            return i;
         }
 
         public int NoOfCutInLicenseForeach()
@@ -76,7 +84,22 @@ namespace SpeedMeasuremetRazor.Services
 
         public int NoOfConditionalRevocation()
         {
-            throw new NotImplementedException();
+            int i = 0;
+            foreach (SpeedMeasurement speedMeasurement in speedMeasurementsList)
+            {
+                if (speedMeasurement.Location.Zone == Zone.Motorvej)
+                {
+                    if (speedMeasurement.Speed > 1.3 * speedMeasurement.Location.SpeedLimit)
+                        i++;
+                }
+                else
+                {
+                    if (speedMeasurement.Speed > 1.6 * speedMeasurement.Location.SpeedLimit)
+                        i++;
+                }
+            }
+
+            return i;
         }
 
         public void DeleteSpeedMeasurement(int id)
