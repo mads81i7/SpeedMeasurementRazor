@@ -1,4 +1,5 @@
 ﻿@page
+@using SpeedMeasuremetRazor.Models
 @model SpeedMeasuremetRazor.Pages.Locations.CreateLocationModel
 @{
     ViewData["Title"] = "Create location";
@@ -8,16 +9,18 @@
 
 <form method="post">
     <div class="form-group">
-        <label asp-for="@Model.Location.Address"></label>
-        <input asp-for="@Model.Location.Address" />
+        <label asp-for="@Model.Location.Address" class="control-label"></label>
+        <input asp-for="@Model.Location.Address" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Location.Zone"></label>
-        <input asp-for="@Model.Location.Zone" />
+        <label asp-for="@Model.Location.Zone" class="control-label"></label>
+        <select asp-for="Location.Zone" asp-items="Html.GetEnumSelectList<Zone>()" class="form-control">
+            <option value="">Choose a zone</option>
+        </select>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Location.SpeedLimit"></label>
-        <input asp-for="@Model.Location.SpeedLimit" />
+        <label asp-for="@Model.Location.SpeedLimit" class="control-label"></label>
+        <input asp-for="@Model.Location.SpeedLimit" class="form-control" />
     </div>
     <div class="form-group">
         <input type="submit" value="Add" class="button"/>
