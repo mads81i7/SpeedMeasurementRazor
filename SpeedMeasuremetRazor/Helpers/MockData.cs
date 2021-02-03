@@ -101,6 +101,15 @@ namespace SpeedMeasuremetRazor.Helpers
             }
         }
 
+        public static int RandomSpeed
+        {
+            get
+            {
+                return r.Next(-20, 375);
+            }
+        }
+
+
 
 
     }
