@@ -29,10 +29,9 @@ namespace SpeedMeasuremetRazor.Pages.Locations
 
         public IActionResult OnPost()
         {
-            Location.Id = _locations.GetAllLocations().Count + 1;
+            Location.Id = _locations.GetHighestLocationId() + 1;
             _locations.AddLocation(Location);
-            Locations = _locations.GetAllLocations();
-            return RedirectToPage("index");
+            return RedirectToPage("Index");
         }
     }
 }

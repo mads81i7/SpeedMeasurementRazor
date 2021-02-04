@@ -59,5 +59,18 @@ namespace SpeedMeasuremetRazor.Services
         {
             LocationList.Remove(GetLocation(id));
         }
+
+        public int GetHighestLocationId()
+        {
+            int maxId = 0;
+
+            foreach (Location location in LocationList)
+            {
+                if (location.Id > maxId)
+                    maxId = location.Id;
+            }
+
+            return maxId;
+        }
     }
 }

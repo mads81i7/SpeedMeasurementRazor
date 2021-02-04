@@ -39,7 +39,16 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
         public  IActionResult OnPost()
         {
             Location l = _locations.GetLocation(LocationId);
-            _measurements.AddSpeedMeasurement(MockData.RandomSpeed, _locations.GetLocation(LocationId), MockData.RandomImage);
+            try
+            {
+                _measurements.AddSpeedMeasurement(MockData.RandomSpeed, _locations.GetLocation(LocationId), MockData.RandomImage);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
             return RedirectToPage("Index");
         }
     }

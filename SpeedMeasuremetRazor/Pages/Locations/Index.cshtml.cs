@@ -19,5 +19,16 @@ namespace SpeedMeasuremetRazor.Pages.Locations
         public void OnGet()
         {
         }
+
+        public IActionResult OnPost(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            LocationRepo.DeleteLocation((int)id);
+            return Page();
+        }
     }
 }

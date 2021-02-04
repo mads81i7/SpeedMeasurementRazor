@@ -46,6 +46,9 @@
                 <a asp-page="/Locations/EditLocation" asp-route-Id="@location.Id">
                     Edit
                 </a>
+                <form method="post">
+                    <button asp-route-Id="@location.Id">Delete</button>
+                </form>
             </td>
         </tr>
 

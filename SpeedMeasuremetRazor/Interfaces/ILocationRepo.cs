@@ -11,8 +11,8 @@ namespace SpeedMeasuremetRazor.Interfaces
         List<Location> GetAllLocations();
         void AddLocation(Location location);
         void UpdateLocation(Location location);
-
         Location GetLocation(int id);
         void DeleteLocation(int id);
+        int GetHighestLocationId();
     }
 }
