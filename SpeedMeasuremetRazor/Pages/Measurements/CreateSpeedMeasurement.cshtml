@@ -5,8 +5,14 @@
 @{
 }
 <h1>Create Speed measurement</h1>
-<img src="~/Images/viewfinder.JPG"/>
+<img src="~/Images/viewfinder.JPG" />
 <p>Choose a location</p>
+@{
+    if (Model.InvalidPost != null && Model.InvalidPost.Length > 0)
+    {
+        <p>@Model.InvalidPost</p>
+    }
+}
 <form method="post">
     <div class="form-group">
         <label asp-for="@Model.LocationId" class="control-label"></label>
@@ -16,5 +22,5 @@
 
     <button>Create</button>
 </form>
-<img src="~/Images/camera-button.jpg"/>
+<img src="~/Images/camera-button.jpg" />
 <p>Look in the viewfinder and push the button</p>

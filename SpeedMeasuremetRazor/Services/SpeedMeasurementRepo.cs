@@ -25,7 +25,7 @@ namespace SpeedMeasuremetRazor.Services
         public void AddSpeedMeasurement(int speed, Location location, string image)
         {
             if (speed < 0 || speed > 300)
-                throw new ArgumentException("Speed is an invalid value.", "speedInvalid");
+                throw new ArgumentException($"{speed} is an invalid speed.");
 
             speedMeasurementsList.Add(new SpeedMeasurement()
             {

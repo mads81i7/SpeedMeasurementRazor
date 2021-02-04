@@ -21,12 +21,17 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
         [BindProperty]
         public int LocationId { get; set; }
 
+        public string InvalidPost;
         public CreateSpeedMeasurementModel(ISpeedMeasurementRepo repo, ILocationRepo locationRepo)
         {
             _measurements = repo;
             _locations = locationRepo;
         }
         public void OnGet()
+        {
+            OnGetMeasurement();
+        }
+        public void OnGetMeasurement()
         {
             Measurements = _measurements.GetAllSpeedMeasurements();
             Options = _locations.GetAllLocations().Select(a => new SelectListItem
@@ -35,18 +40,21 @@ namespace SpeedMeasuremetRazor.Pages.Measurements
                 Text = a.Address
             }).ToList();
         }
-        
         public  IActionResult OnPost()
         {
             Location l = _locations.GetLocation(LocationId);
+            
             try
             {
                 _measurements.AddSpeedMeasurement(MockData.RandomSpeed, _locations.GetLocation(LocationId), MockData.RandomImage);
+            
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
+                InvalidPost = e.Message;
+                OnGetMeasurement();
+                return Page();
             }
 
             return RedirectToPage("Index");
