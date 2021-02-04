@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SpeedMeasuremetRazor.Exceptions;
 using SpeedMeasuremetRazor.Helpers;
 using SpeedMeasuremetRazor.Interfaces;
 using SpeedMeasuremetRazor.Models;
@@ -25,7 +26,7 @@ namespace SpeedMeasuremetRazor.Services
         public void AddSpeedMeasurement(int speed, Location location, string image)
         {
             if (speed < 0 || speed > 300)
-                throw new ArgumentException($"{speed} is an invalid speed.");
+                throw new CalibrationException($"{speed} is an invalid speed.");
 
             speedMeasurementsList.Add(new SpeedMeasurement()
             {

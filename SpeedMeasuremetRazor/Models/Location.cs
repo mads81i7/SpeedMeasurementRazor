@@ -10,7 +10,10 @@ namespace SpeedMeasuremetRazor.Models
     {
         public static int staticInt { get; set; }
         public int Id { get; set; }
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
+
+        [Required(ErrorMessage = "SpeedLimit is required")]
         public int SpeedLimit { get; set; }
         public Zone Zone { get; set; }
     }

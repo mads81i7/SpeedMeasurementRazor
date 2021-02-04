@@ -11,6 +11,7 @@
     <div class="form-group">
         <label asp-for="@Model.Location.Address" class="control-label"></label>
         <input asp-for="@Model.Location.Address" class="form-control" />
+        <span asp-validation-for="Location.Address" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="@Model.Location.Zone" class="control-label"></label>
@@ -21,6 +22,7 @@
     <div class="form-group">
         <label asp-for="@Model.Location.SpeedLimit" class="control-label"></label>
         <input asp-for="@Model.Location.SpeedLimit" class="form-control" />
+        <span asp-validation-for="Location.SpeedLimit" class="text-danger"></span>
     </div>
     <div class="form-group">
         <input type="submit" value="Add" class="button"/>
