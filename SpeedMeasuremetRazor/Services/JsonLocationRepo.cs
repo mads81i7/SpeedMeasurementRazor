@@ -53,8 +53,15 @@ namespace SpeedMeasuremetRazor.Services
 
         public void DeleteLocation(int id)
         {
-            List<Location> LocationList = GetAllLocations().ToList();
-            LocationList.Remove(LocationList[id - 1]);
+            List<Location> LocationList = GetAllLocations();
+            for (int i = 0; i < LocationList.Count; i++)
+            {
+                if (LocationList[i].Id == id)
+                {
+                    LocationList.Remove(LocationList[i]);
+                    break;
+                }
+            }
             JsonFileWriter.WriteToJsonLocation(LocationList, JsonFileName);
         }
 

@@ -6,21 +6,81 @@
     "Location": {
       "Id": 1,
       "Address": "Maglegårdsvej 2",
-      "Zone": 0,
-      "SpeedLimit": 50
+      "SpeedLimit": 50,
+      "Zone": 0
     },
-    "ImageName": "c1.jfif"
+    "Image": null
+  },
+  {
+    "Id": 3,
+    "TimeStamp": "2021-02-08T12:35:58.9582651+01:00",
+    "Speed": 61,
+    "Location": {
+      "Id": 3,
+      "Address": "asdfsf",
+      "SpeedLimit": 12314,
+      "Zone": 0
+    },
+    "Image": "whitetruck.jfif"
+  },
+  {
+    "Id": 4,
+    "TimeStamp": "2021-02-08T12:37:54.8064042+01:00",
+    "Speed": 90,
+    "Location": {
+      "Id": 5,
+      "Address": "asdfj",
+      "SpeedLimit": 120,
+      "Zone": 1
+    },
+    "Image": "c1.jfif"
+  },
+  {
+    "Id": 5,
+    "TimeStamp": "2021-02-08T12:38:01.4996876+01:00",
+    "Speed": 159,
+    "Location": {
+      "Id": 6,
+      "Address": "asdf",
+      "SpeedLimit": 2134,
+      "Zone": 2
+    },
+    "Image": "nissan.jfif"
   },
   {
     "Id": 6,
-    "TimeStamp": "2021-01-31T16:03:04.4512509+01:00",
-    "Speed": 281,
+    "TimeStamp": "2021-02-08T12:38:14.0173598+01:00",
+    "Speed": 237,
     "Location": {
-      "Id": 2,
-      "Address": "Hillerødmotorvejen 123",
-      "Zone": 1,
-      "SpeedLimit": 110
+      "Id": 6,
+      "Address": "asdf",
+      "SpeedLimit": 2134,
+      "Zone": 2
     },
-    "ImageName": "nissan.jfif"
+    "Image": "c1.jfif"
+  },
+  {
+    "Id": 10,
+    "TimeStamp": "2021-02-08T12:42:11.3765461+01:00",
+    "Speed": 231,
+    "Location": {
+      "Id": 6,
+      "Address": "asdf",
+      "SpeedLimit": 2134,
+      "Zone": 2
+    },
+    "Image": "whitecar.jfif"
+  },
+  {
+    "Id": 11,
+    "TimeStamp": "2021-02-08T12:42:45.6219451+01:00",
+    "Speed": 228,
+    "Location": {
+      "Id": 5,
+      "Address": "asdfj",
+      "SpeedLimit": 120,
+      "Zone": 1
+    },
+    "Image": "whitecar.jfif"
   }
 ]

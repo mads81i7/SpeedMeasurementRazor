@@ -1,20 +1,26 @@
 [
   {
-    "Id": 1,
-    "Address": "Maglegårdsvej 2",
-    "SpeedLimit": 53,
-    "Zone": 0
-  },
-  {
     "Id": 2,
-    "Address": "Hillerødmotorvejen 123",
+    "Address": "Hiller�dmotorvejen 123",
     "SpeedLimit": 110,
     "Zone": 1
   },
   {
     "Id": 3,
-    "Address": "Frederiksborgvej 537",
-    "SpeedLimit": 90,
+    "Address": "asdfsf",
+    "SpeedLimit": 12314,
+    "Zone": 0
+  },
+  {
+    "Id": 5,
+    "Address": "asdfj",
+    "SpeedLimit": 120,
     "Zone": 1
+  },
+  {
+    "Id": 6,
+    "Address": "asdf",
+    "SpeedLimit": 2134,
+    "Zone": 2
   }
 ]
