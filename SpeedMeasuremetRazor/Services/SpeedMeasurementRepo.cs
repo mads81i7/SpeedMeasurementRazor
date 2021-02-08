@@ -25,7 +25,7 @@ namespace SpeedMeasuremetRazor.Services
 
         public void AddSpeedMeasurement(int speed, Location location, string image)
         {
-            if (speed < 0 || speed > 300)
+            if (speed <= 0 || speed > 300)
                 throw new CalibrationException($"{speed} is an invalid speed.");
 
             speedMeasurementsList.Add(new SpeedMeasurement()
