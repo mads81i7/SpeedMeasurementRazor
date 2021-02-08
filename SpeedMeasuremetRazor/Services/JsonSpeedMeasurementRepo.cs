@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using SpeedMeasuremetRazor.Helpers;
 using SpeedMeasuremetRazor.Interfaces;
 using SpeedMeasuremetRazor.Models;
 
@@ -9,9 +11,10 @@ namespace SpeedMeasuremetRazor.Services
 {
     public class JsonSpeedMeasurementRepo: ISpeedMeasurementRepo
     {
+        private string JsonFileName = @"Data\SpeedMeasurementData.json";
         public List<SpeedMeasurement> GetAllSpeedMeasurements()
         {
-            throw new NotImplementedException();
+            return JsonFileReader.ReadJsonSpeedMeasurement(JsonFileName);
         }
 
         public void AddSpeedMeasurement(int speed, Location location, string imageName)
