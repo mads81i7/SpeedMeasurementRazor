@@ -93,10 +93,6 @@ body {
     color: cornsilk;
 }
 
-.Image3x5 {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
 .RedError {
     background-color: red;
 }
@@ -110,5 +106,22 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    float: none;
 }
+
+.selectbar-measurement {
+    width: 50%;
+    display: block;
+    float: left;
+    min-width: 430px;
+    padding-right: 20px;
+}
+
+.ImageCamera {
+    max-height: 100px;
+}
+
+
+
+
 

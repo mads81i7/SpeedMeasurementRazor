@@ -4,23 +4,27 @@
 @model SpeedMeasuremetRazor.Pages.Measurements.CreateSpeedMeasurementModel
 @{
 }
-<h1>Create Speed measurement</h1>
-<img src="~/Images/viewfinder.JPG" />
-<p>Choose a location</p>
-@{
-    if (Model.InvalidPost != null && Model.InvalidPost.Length > 0)
-    {
-        <p class="RedError">@Model.InvalidPost</p>
+<h1 class="center">Create Speed measurement</h1>
+<img class="center" src="~/Images/viewfinder.JPG" />
+<div class="center" style="padding-top: 30px">
+    
+    @{
+        if (Model.InvalidPost != null && Model.InvalidPost.Length > 0)
+        {
+            <p class="RedError">@Model.InvalidPost</p>
+        }
     }
-}
-<form method="post">
-    <div class="form-group">
-        <label asp-for="@Model.LocationId" class="control-label"></label>
-        <select asp-for="@Model.LocationId" asp-items="@Model.Options" class="form-control">
-        </select>
-    </div>
+    <form method="post">
+        <div class="form-group selectbar-measurement">
+            <p>Choose a location</p>
+            <select asp-for="@Model.LocationId" asp-items="@Model.Options" class="form-control">
+            </select>
+        </div>
+        <div>
+            <button style="display:inline-block"><img class="ImageCamera" src="~/Images/camera-button.png" /></button>
+            
+        </div>
 
-    <button>Create</button>
-</form>
-<img src="~/Images/camera-button.jpg" />
-<p>Look in the viewfinder and push the button</p>
+    </form>
+</div>
+<p class="center">Look in the viewfinder and push the button</p>

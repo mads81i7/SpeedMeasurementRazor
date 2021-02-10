@@ -82,5 +82,41 @@
       "Zone": 0
     },
     "Image": "c1.jfif"
+  },
+  {
+    "Id": 13,
+    "TimeStamp": "2021-02-10T12:52:00.4231785+01:00",
+    "Speed": 243,
+    "Location": {
+      "Id": 2,
+      "Address": "Hillerødmotorvejen 123",
+      "SpeedLimit": 110,
+      "Zone": 1
+    },
+    "Image": "nissan.jfif"
+  },
+  {
+    "Id": 14,
+    "TimeStamp": "2021-02-10T13:39:26.109474+01:00",
+    "Speed": 178,
+    "Location": {
+      "Id": 2,
+      "Address": "Hillerødmotorvejen 123",
+      "SpeedLimit": 110,
+      "Zone": 1
+    },
+    "Image": "whitetruck.jfif"
+  },
+  {
+    "Id": 15,
+    "TimeStamp": "2021-02-10T13:41:40.7500756+01:00",
+    "Speed": 177,
+    "Location": {
+      "Id": 2,
+      "Address": "Hillerødmotorvejen 123",
+      "SpeedLimit": 110,
+      "Zone": 1
+    },
+    "Image": "nissan.jfif"
   }
 ]
