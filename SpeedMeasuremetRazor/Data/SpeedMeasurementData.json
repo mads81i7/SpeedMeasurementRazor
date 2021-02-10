@@ -1,17 +1,5 @@
 [
   {
-    "Id": 1,
-    "TimeStamp": "2021-01-31T16:02:28.3124011+01:00",
-    "Speed": 91,
-    "Location": {
-      "Id": 1,
-      "Address": "Maglegårdsvej 2",
-      "SpeedLimit": 50,
-      "Zone": 0
-    },
-    "Image": null
-  },
-  {
     "Id": 3,
     "TimeStamp": "2021-02-08T12:35:58.9582651+01:00",
     "Speed": 61,
@@ -82,5 +70,17 @@
       "Zone": 1
     },
     "Image": "whitecar.jfif"
+  },
+  {
+    "Id": 12,
+    "TimeStamp": "2021-02-10T11:46:55.0637376+01:00",
+    "Speed": 26,
+    "Location": {
+      "Id": 3,
+      "Address": "asdfsf",
+      "SpeedLimit": 12314,
+      "Zone": 0
+    },
+    "Image": "c1.jfif"
   }
 ]

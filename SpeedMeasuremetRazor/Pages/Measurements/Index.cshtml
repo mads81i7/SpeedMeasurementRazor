@@ -37,34 +37,49 @@
     <tbody>
         @foreach (var speedMeasurement in Model.SpeedMeasurementRepo.GetAllSpeedMeasurements())
         {
-        <tr>
-            <td>
-                @speedMeasurement.Id
-            </td>
-            <td>
-                @speedMeasurement.Speed
-            </td>
-            <td>
-                @speedMeasurement.TimeStamp
-            </td>
-            <td>
-                @speedMeasurement.Location.Address
-            </td>
-            <td>
-                @speedMeasurement.Location.Zone
-            </td>
-            <td>
-                @speedMeasurement.Location.SpeedLimit
-            </td>
-            <td>
-                <img src="~/Images/@speedMeasurement.Image" />
-            </td>
-            <td>
-                <form method="post">
-                    <button asp-route-Id="@speedMeasurement.Id">Delete</button>
-                </form>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @speedMeasurement.Id
+                </td>
+                <td>
+                    @if (speedMeasurement.Speed > speedMeasurement.Location.SpeedLimit)
+                    {
+                        <div class="RedError">
+                            @speedMeasurement.Speed
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            @speedMeasurement.Speed
+                        </div>
+                    }
+                </td>
+                <td>
+                    @speedMeasurement.TimeStamp
+                </td>
+                <td>
+                    @speedMeasurement.Location.Address
+                </td>
+                <td>
+                    @speedMeasurement.Location.Zone
+                </td>
+                <td>
+                    @speedMeasurement.Location.SpeedLimit
+                </td>
+
+                <td class="Image3x5"><img src="~/Images/@speedMeasurement.Image" /></td>
+                <td>
+
+                    <form method="post">
+
+                        <button asp-route-Id="@speedMeasurement.Id">Delete</button>
+
+                    </form>
+
+                </td>
+
+            </tr>
         }
     </tbody>
 </table>
