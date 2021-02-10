@@ -6,9 +6,9 @@
 <h1>List of speed measurements</h1>
 
 <p>Number of measurements: @Model.SpeedMeasurementRepo.GetAllSpeedMeasurements().Count</p>
-<a style="color: white" asp-page="/Measurements/CreateSpeedMeasurement">
+<div style="padding-bottom:30px;"><a  class="Edit-button create-color" asp-page="/Measurements/CreateSpeedMeasurement">
     Create New
-</a>
+</a></div>
 <table class="table">
     <thead>
         <tr>

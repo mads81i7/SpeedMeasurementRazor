@@ -9,7 +9,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    /*color: #0366d6;*/
 }
 
 .btn-primary {
@@ -26,7 +26,7 @@ a {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
+    html {
   font-size: 14px;
 }
 @media (min-width: 768px) {
@@ -108,6 +108,11 @@ body {
     width: 50%;
     float: none;
 }
+.center2 {
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .selectbar-measurement {
     width: 50%;
@@ -116,6 +121,46 @@ body {
     min-width: 430px;
     padding-right: 20px;
 }
+.Edit-button {
+  
+ 
+}
+    /*.Edit-button.a:visited*/
+
+.Styled-button-red, .Styled-button-red:hover {
+    background-color: #f44336;
+}
+.Styled-button-green, .Styled-button-green:hover {
+    background-color: green;
+}
+.Edit-button, .Edit-button:hover {
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: solid 3px #000000;
+    border-right: solid 3px #000000;
+    border-top: solid 3px #808080;
+    border-left: solid 3px #808080;
+}
+.Styled-table-lightblue {
+    background-color: #00a4ff;
+}
+.Styled-table-darkblue {
+    background-color: #0094ff;
+}
+.create-color {
+    background-color: palevioletred;
+}
+.ImageCamera {
+    max-height: 100px;
+}
+.RoundedImage {
+    border-radius: 50%;
+    border-bottom: solid 10px palevioletred;
+}
+
 
 .ImageCamera {
     max-height: 100px;

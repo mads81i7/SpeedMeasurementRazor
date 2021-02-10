@@ -6,52 +6,71 @@
 <h1>List of Locations</h1>
 
 <p>Number of Locations: @Model.LocationRepo.GetAllLocations().Count</p>
-<a style="color: white" asp-page="/Locations/CreateLocation">
-    Create New
-</a>
+<div style="padding-bottom:30px;">
+    <a class="Edit-button create-color" asp-page="/Locations/CreateLocation">
+        Create New
+    </a>
+</div>
 <table class="table">
     <thead>
-    <tr>
-        <th>
-            Id
-        </th>
-        <th>
-            Address
-        </th>
-        <th>
-            Zone
-        </th>
-        <th>
-            Speed Limit
-        </th>
-    </tr>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Zone
+            </th>
+            <th>
+                Speed Limit
+            </th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var location in Model.LocationRepo.GetAllLocations())
-    {
-        <tr>
-            <td>
-                @location.Id
-            </td>
-            <td>
-                @location.Address
-            </td>
-            <td>
-                @location.Zone
-            </td>
-            <td>
-                @location.SpeedLimit
-            </td>
-            <td>
-                <a asp-page="/Locations/EditLocation" asp-route-Id="@location.Id">
-                    Edit
-                </a>
-                <form method="post">
-                    <button asp-route-Id="@location.Id">Delete</button>
-                </form>
-            </td>
-        </tr>
+        @{
+            string style;
+            float cnt = 0;
 
-    }
+            foreach (var location in Model.LocationRepo.GetAllLocations())
+            {
+                cnt++;
+                if (cnt % 2 != 0)
+                {
+                    style = "Styled-table-lightblue";
+                }
+                else
+                {
+                    style = "Styled-table-darkblue";
+                }
+
+                <tr class="@style">
+                    <td>
+                        @location.Id
+                    </td>
+                    <td>
+                        @location.Address
+                    </td>
+                    <td>
+                        @location.Zone
+                    </td>
+                    <td>
+                        @location.SpeedLimit
+                    </td>
+                    <td>
+
+                        <a class="Edit-button Styled-button-green" asp-page="/Locations/EditLocation" asp-route-Id="@location.Id">
+                            Edit
+                        </a>
+
+                        <form method="post">
+                            <button class="Edit-button Styled-button-red" asp-route-Id="@location.Id">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+
+            }
+        }
     </tbody>
 </table>
