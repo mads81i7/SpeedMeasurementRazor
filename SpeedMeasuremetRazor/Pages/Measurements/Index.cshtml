@@ -1,6 +1,7 @@
 ﻿@page
 @model SpeedMeasuremetRazor.Pages.Measurements.IndexModel
 @{
+    string style;
 }
 <h1>List of speed measurements</h1>
 
@@ -37,47 +38,45 @@
     <tbody>
         @foreach (var speedMeasurement in Model.SpeedMeasurementRepo.GetAllSpeedMeasurements())
         {
-            <tr>
+            @if (speedMeasurement.Speed > speedMeasurement.Location.SpeedLimit)
+            {
+                style = "RedError";
+            }
+            else
+            {
+                style = "GreenOK";
+            }
+            <tr class="@style">
                 <td>
-                    @speedMeasurement.Id
-                </td>
-                <td>
-                    @if (speedMeasurement.Speed > speedMeasurement.Location.SpeedLimit)
-                    {
-                        <div class="RedError">
-                            @speedMeasurement.Speed
-                        </div>
-                    }
-                    else
-                    {
-                        <div>
-                            @speedMeasurement.Speed
-                        </div>
-                    }
-                </td>
-                <td>
-                    @speedMeasurement.TimeStamp
-                </td>
-                <td>
-                    @speedMeasurement.Location.Address
-                </td>
-                <td>
-                    @speedMeasurement.Location.Zone
-                </td>
-                <td>
-                    @speedMeasurement.Location.SpeedLimit
-                </td>
+                        @speedMeasurement.Id
+                    </td>
+                    <td>
+                        @speedMeasurement.Speed
+            
+                    </td>
+                    <td>
+                        @speedMeasurement.TimeStamp
+                    </td>
+                    <td>
+                        @speedMeasurement.Location.Address
+                    </td>
+                    <td>
+                        @speedMeasurement.Location.Zone
+                    </td>
+                    <td>
+                        @speedMeasurement.Location.SpeedLimit
+                    </td>
 
-                <td class="Image3x5"><img src="~/Images/@speedMeasurement.Image" /></td>
-                <td>
+                    <td class="Image3x5"><img src="~/Images/@speedMeasurement.Image" /></td>
+                    <td>
 
-                    <form method="post">
+                        <form method="post">
 
-                        <button asp-route-Id="@speedMeasurement.Id">Delete</button>
+                            <button asp-route-Id="@speedMeasurement.Id">Delete</button>
 
-                    </form>
+                        </form>
 
-                </td>
+                    </td>
 
             </tr>
         }

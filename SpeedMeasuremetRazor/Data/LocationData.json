@@ -1,7 +1,7 @@
 [
   {
     "Id": 2,
-    "Address": "Hiller�dmotorvejen 123",
+    "Address": "Hillerødmotorvejen 123",
     "SpeedLimit": 110,
     "Zone": 1
   },
@@ -22,5 +22,11 @@
     "Address": "asdf",
     "SpeedLimit": 2134,
     "Zone": 2
+  },
+  {
+    "Id": 7,
+    "Address": "Maglegårdsvej 22",
+    "SpeedLimit": 50,
+    "Zone": 0
   }
 ]
