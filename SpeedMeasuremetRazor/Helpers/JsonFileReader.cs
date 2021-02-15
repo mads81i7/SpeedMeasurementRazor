@@ -9,17 +9,12 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace SpeedMeasuremetRazor.Helpers
 {
-    public class JsonFileReader
+    public class JsonFileReader<T>
     {
-        public static List<Location> ReadJsonLocation(string jsonName)
+        public static List<T> ReadJson(string jsonName)
         {
             string jsonString = File.ReadAllText(jsonName);
-            return JsonSerializer.Deserialize<List<Location>>(jsonString);
-        }
-        public static List<SpeedMeasurement> ReadJsonSpeedMeasurement(string jsonName)
-        {
-            string jsonString = File.ReadAllText(jsonName);
-            return JsonSerializer.Deserialize<List<SpeedMeasurement>>(jsonString);
+            return JsonSerializer.Deserialize<List<T>>(jsonString);
         }
     }
 }

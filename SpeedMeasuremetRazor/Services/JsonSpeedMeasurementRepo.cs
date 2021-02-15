@@ -15,7 +15,7 @@ namespace SpeedMeasuremetRazor.Services
         private string JsonFileName = @"Data\SpeedMeasurementData.json";
         public List<SpeedMeasurement> GetAllSpeedMeasurements()
         {
-            return JsonFileReader.ReadJsonSpeedMeasurement(JsonFileName);
+            return JsonFileReader<SpeedMeasurement>.ReadJson(JsonFileName);
         }
 
         public void AddSpeedMeasurement(int speed, Location location, string imageName)
@@ -34,7 +34,7 @@ namespace SpeedMeasuremetRazor.Services
                 Image = imageName
             });
 
-            JsonFileWriter.WriteToJsonSpeedMeasurement(speedMeasurementsList, JsonFileName);
+            JsonFileWriter<SpeedMeasurement>.WriteToJson(speedMeasurementsList, JsonFileName);
         }
 
         public double AvarageSpeed()
@@ -127,7 +127,7 @@ namespace SpeedMeasuremetRazor.Services
                     break;
                 }
             }
-            JsonFileWriter.WriteToJsonSpeedMeasurement(speedMeasurementsList, JsonFileName);
+            JsonFileWriter<SpeedMeasurement>.WriteToJson(speedMeasurementsList, JsonFileName);
         }
 
         public int GetHighestSpeedMeasurementId()

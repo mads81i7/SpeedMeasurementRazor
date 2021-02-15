@@ -7,17 +7,11 @@ using SpeedMeasuremetRazor.Models;
 
 namespace SpeedMeasuremetRazor.Helpers
 {
-    public class JsonFileWriter
+    public class JsonFileWriter<T>
     {
-        public static void WriteToJsonLocation(List<Location> locations, string JsonFileName)
+        public static void WriteToJson(List<T> locations, string JsonFileName)
         {
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(locations, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(JsonFileName, output);
-        }
-
-        public static void WriteToJsonSpeedMeasurement(List<SpeedMeasurement> measurements, string JsonFileName)
-        {
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(measurements, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(JsonFileName, output);
         }
     }

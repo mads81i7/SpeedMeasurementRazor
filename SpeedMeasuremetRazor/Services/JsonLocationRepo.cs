@@ -13,14 +13,14 @@ namespace SpeedMeasuremetRazor.Services
         private string JsonFileName = @"Data\LocationData.json";
         public List<Location> GetAllLocations()
         {
-            return JsonFileReader.ReadJsonLocation(JsonFileName);
+            return JsonFileReader<Location>.ReadJson(JsonFileName);
         }
 
         public void AddLocation(Location location)
         {
             List<Location> locations = GetAllLocations();
             locations.Add(location);
-            JsonFileWriter.WriteToJsonLocation(locations, JsonFileName);
+            JsonFileWriter<Location>.WriteToJson(locations, JsonFileName);
         }
 
         public void UpdateLocation(Location location)
@@ -34,7 +34,7 @@ namespace SpeedMeasuremetRazor.Services
                     break;
                 }
             }
-            JsonFileWriter.WriteToJsonLocation(LocationList, JsonFileName);
+            JsonFileWriter<Location>.WriteToJson(LocationList, JsonFileName);
         }
 
         public Location GetLocation(int id)
@@ -62,7 +62,7 @@ namespace SpeedMeasuremetRazor.Services
                     break;
                 }
             }
-            JsonFileWriter.WriteToJsonLocation(LocationList, JsonFileName);
+            JsonFileWriter<Location>.WriteToJson(LocationList, JsonFileName);
         }
 
         public int GetHighestLocationId()
