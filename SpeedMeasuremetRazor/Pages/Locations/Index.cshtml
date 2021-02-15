@@ -11,6 +11,19 @@
         Create New
     </a>
 </div>
+
+<form method="post" asp-page-handler="Sort">
+    <div class="form-group selectbar-measurement">
+        <p>Select sorting method</p>
+        <select name="option" class="form-control">
+            <option value="1">Address</option>
+            <option value="2">Zone</option>
+            <option value="3">Speed Limit</option>
+        </select>
+    </div>
+    <button class="Edit-button Styled-button-red">Sort</button>
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -33,7 +46,7 @@
             string style;
             float cnt = 0;
 
-            foreach (var location in Model.LocationRepo.GetAllLocations())
+            foreach (var location in Model.SortableLocationList)
             {
                 cnt++;
                 if (cnt % 2 != 0)
