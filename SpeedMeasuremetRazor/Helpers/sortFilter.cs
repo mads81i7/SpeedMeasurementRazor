@@ -7,23 +7,15 @@ namespace SpeedMeasuremetRazor.Helpers
 {
     public class SortFilter
     {
-        private Predicate<string> textpcomparer = (string str) => { 
-            return if(str.Contains(
-        
-        
-        public List<T> ComparerText<T>(List<T> objs)
+        public static List<T> Comparer<T>(List<T> objs, Predicate<T> predicate)
         {
-            return Comparer(objs, comparer);
-        }
-
-        public List<T> Comparer<T>(List<T> objs, string str)
-        {
-            Predicate<T> comparer = (string str) => { };
             List<T> newObj = new List<T>();
-            foreach (var obj in objs.FindAll(comparer))
+
+            foreach (var obj in objs.FindAll(predicate))
             {
-                newObj.Add(obj)
+                newObj.Add(obj);
             }
+
             return newObj;
         }
     }

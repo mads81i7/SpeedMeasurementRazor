@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Options;
+using SpeedMeasuremetRazor.Helpers;
 using SpeedMeasuremetRazor.Interfaces;
 using SpeedMeasuremetRazor.Models;
 
@@ -30,9 +31,10 @@ namespace SpeedMeasuremetRazor.Pages.Locations
 
         public IActionResult OnPostSort(int option, string option2)
         {
-            if (option2.Length > 0)
+            if (option2?.Length > 0)
             {
-               // SortFilter.
+                Predicate<Location> predicateLocation = (Location loc) => { return loc.Address.Contains(option2); };
+                SortableLocationList = SortFilter.Comparer(SortableLocationList, predicateLocation);
             }
 
             if (option == 1)
