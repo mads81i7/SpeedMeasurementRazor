@@ -6,9 +6,11 @@
 <h1>List of speed measurements</h1>
 
 <p>Number of measurements: @Model.SpeedMeasurementRepo.GetAllSpeedMeasurements().Count</p>
-<div style="padding-bottom:30px;"><a  class="Edit-button create-color" asp-page="/Measurements/CreateSpeedMeasurement">
-    Create New
-</a></div>
+<div style="padding-bottom:30px;">
+    <a class="Edit-button create-color" asp-page="/Measurements/CreateSpeedMeasurement">
+        Create New
+    </a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -29,6 +31,18 @@
         </tr>
     </tbody>
 </table>
+<form method="post" asp-page-handler="Filter">
+    <div class="form-group selectbar-measurement">
+        <select name="option" class="form-control">
+            <option value="1">All</option>
+            <option value="2">Over Speed Limit</option>
+            <option value="3">Cut in license</option>
+            <option value="4">Conditional revocation</option>
+            <option value="5">Unconditional revocation</option>
+        </select>
+        <button class="Edit-button Styled-button-red" style="position:absolute; align-content:center;">Filter</button>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -56,7 +70,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var speedMeasurement in Model.SpeedMeasurementRepo.GetAllSpeedMeasurements())
+        @foreach (var speedMeasurement in Model.FilterList)
         {
             @if (speedMeasurement.Speed > speedMeasurement.Location.SpeedLimit)
             {
@@ -68,35 +82,35 @@
             }
             <tr class="@style">
                 <td>
-                        @speedMeasurement.Id
-                    </td>
-                    <td>
-                        @speedMeasurement.Speed
-            
-                    </td>
-                    <td>
-                        @speedMeasurement.TimeStamp
-                    </td>
-                    <td>
-                        @speedMeasurement.Location.Address
-                    </td>
-                    <td>
-                        @speedMeasurement.Location.Zone
-                    </td>
-                    <td>
-                        @speedMeasurement.Location.SpeedLimit
-                    </td>
+                    @speedMeasurement.Id
+                </td>
+                <td>
+                    @speedMeasurement.Speed
 
-                    <td class="Image3x5"><img src="~/Images/@speedMeasurement.Image" /></td>
-                    <td>
+                </td>
+                <td>
+                    @speedMeasurement.TimeStamp
+                </td>
+                <td>
+                    @speedMeasurement.Location.Address
+                </td>
+                <td>
+                    @speedMeasurement.Location.Zone
+                </td>
+                <td>
+                    @speedMeasurement.Location.SpeedLimit
+                </td>
 
-                        <form method="post">
+                <td class="Image3x5"><img src="~/Images/@speedMeasurement.Image" /></td>
+                <td>
 
-                            <button asp-route-Id="@speedMeasurement.Id">Delete</button>
+                    <form method="post">
 
-                        </form>
+                        <button asp-route-Id="@speedMeasurement.Id">Delete</button>
 
-                    </td>
+                    </form>
+
+                </td>
 
             </tr>
         }
