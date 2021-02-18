@@ -100,18 +100,34 @@ namespace SpeedMeasuremetRazor.Services
             int i = 0;
             foreach (SpeedMeasurement speedMeasurement in speedMeasurementsList)
             {
-                if (speedMeasurement.Location.Zone == Zone.Motorvej)
+                if (!(speedMeasurement.Speed > 2 * speedMeasurement.Location.SpeedLimit && speedMeasurement.Speed >= 100))
                 {
-                    if (speedMeasurement.Speed > 1.3 * speedMeasurement.Location.SpeedLimit)
-                        i++;
-                }
-                else
-                {
-                    if (speedMeasurement.Speed > 1.6 * speedMeasurement.Location.SpeedLimit)
-                        i++;
+                    if (speedMeasurement.Location.Zone == Zone.Motorvej)
+                    {
+                        if (speedMeasurement.Speed > 1.3 * speedMeasurement.Location.SpeedLimit)
+                            i++;
+                    }
+                    else
+                    {
+                        if (speedMeasurement.Speed > 1.6 * speedMeasurement.Location.SpeedLimit)
+                            i++;
+                    }
                 }
             }
 
+            return i;
+        }
+
+        public int NoOfUnconditionalRevocation()
+        {
+            List<SpeedMeasurement> speedMeasurementsList = GetAllSpeedMeasurements();
+
+            int i = 0;
+            foreach (SpeedMeasurement speedMeasurement in speedMeasurementsList)
+            {
+                if (speedMeasurement.Speed > 2 * speedMeasurement.Location.SpeedLimit && speedMeasurement.Speed >= 100)
+                        i++;
+            }
             return i;
         }
 

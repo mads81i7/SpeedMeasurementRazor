@@ -106,6 +106,11 @@ namespace SpeedMeasuremetRazor.Services
             return i;
         }
 
+        public int NoOfUnconditionalRevocation()
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteSpeedMeasurement(int id)
         {
             for (int i = 0; i < speedMeasurementsList.Count; i++)
