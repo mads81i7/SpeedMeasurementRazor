@@ -9,14 +9,7 @@ namespace SpeedMeasuremetRazor.Helpers
     {
         public static List<T> Comparer<T>(List<T> objs, Predicate<T> predicate)
         {
-            List<T> newObj = new List<T>();
-
-            foreach (var obj in objs.FindAll(predicate))
-            {
-                newObj.Add(obj);
-            }
-
-            return newObj;
+            return objs.FindAll(predicate);
         }
     }
 }

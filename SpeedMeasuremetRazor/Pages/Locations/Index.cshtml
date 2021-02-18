@@ -14,9 +14,11 @@
 
 <form method="post" asp-page-handler="Sort">
     <div class="form-group selectbar-measurement">
-        <input name="option2" />
+        <div style="padding-bottom:10px">
+            <input name="option2" class="floatLeft" />
+            <button class="Edit-button Styled-button-red" style="position:absolute; align-content:center;" >Sort</button>
+        </div>
         <p>Select sorting method</p>
-        <button class="Edit-button Styled-button-red">Sort</button>
         <select name="option" class="form-control">
             <option value="1">Address</option>
             <option value="2">Zone</option>
