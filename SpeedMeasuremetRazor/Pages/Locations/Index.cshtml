@@ -14,14 +14,15 @@
 
 <form method="post" asp-page-handler="Sort">
     <div class="form-group selectbar-measurement">
+        <input name="option2" />
         <p>Select sorting method</p>
+        <button class="Edit-button Styled-button-red">Sort</button>
         <select name="option" class="form-control">
             <option value="1">Address</option>
             <option value="2">Zone</option>
             <option value="3">Speed Limit</option>
         </select>
     </div>
-    <button class="Edit-button Styled-button-red">Sort</button>
 </form>
 
 <table class="table">

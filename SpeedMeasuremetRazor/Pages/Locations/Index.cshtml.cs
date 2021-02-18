@@ -28,8 +28,13 @@ namespace SpeedMeasuremetRazor.Pages.Locations
         {
         }
 
-        public IActionResult OnPostSort(int option)
+        public IActionResult OnPostSort(int option, string option2)
         {
+            if (option2.Length > 0)
+            {
+               // SortFilter.
+            }
+
             if (option == 1)
             {
                 SortableLocationList.Sort();
